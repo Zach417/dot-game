@@ -27,7 +27,7 @@ function draw() {
   background(0);
   handleGravity();
   drawGrid();
-  handleKeyIsDown();
+  //handleKeyIsDown();
   candyP.html("Score: " + candyCount);
 }
 
@@ -90,19 +90,19 @@ function getDotRandom(scale) {
   return result;
 }
 
-function handleKeyIsDown() {
-  if (keyIsDown(LEFT_ARROW) && !maze.includes(dot.x - maze.scale, dot.y)) {
-    dot.left();
-  }
-
-  if (keyIsDown(RIGHT_ARROW) && !maze.includes(dot.x + maze.scale, dot.y)) {
-    dot.right();
-  }
-
-  if (keyIsDown(DOWN_ARROW) && !maze.includes(dot.x, dot.y + maze.scale)) {
-    dot.down();
-  }
-}
+// function handleKeyIsDown() {
+//   if (keyIsDown(LEFT_ARROW) && !maze.includes(dot.x - maze.scale, dot.y)) {
+//     dot.left();
+//   }
+//
+//   if (keyIsDown(RIGHT_ARROW) && !maze.includes(dot.x + maze.scale, dot.y)) {
+//     dot.right();
+//   }
+//
+//   if (keyIsDown(DOWN_ARROW) && !maze.includes(dot.x, dot.y + maze.scale)) {
+//     dot.down();
+//   }
+// }
 
 function keyPressed() {
   var arrowKeyCodes = [37,38,39,40];
@@ -111,17 +111,17 @@ function keyPressed() {
     dot.color = "";
   }
 
-  // if (keyCode == LEFT_ARROW && !maze.includes(dot.x - maze.scale, dot.y)) {
-  //   dot.left();
-  // }
-  //
-  // if (keyCode == RIGHT_ARROW && !maze.includes(dot.x + maze.scale, dot.y)) {
-  //   dot.right();
-  // }
-  //
-  // if (keyCode == DOWN_ARROW && !maze.includes(dot.x, dot.y + maze.scale)) {
-  //   dot.down();
-  // }
+  if (keyCode == LEFT_ARROW && !maze.includes(dot.x - maze.scale, dot.y)) {
+    dot.left();
+  }
+
+  if (keyCode == RIGHT_ARROW && !maze.includes(dot.x + maze.scale, dot.y)) {
+    dot.right();
+  }
+
+  if (keyCode == DOWN_ARROW && !maze.includes(dot.x, dot.y + maze.scale)) {
+    dot.down();
+  }
 
   if (keyCode == UP_ARROW && !maze.includes(dot.x, dot.y - maze.scale)) {
     dot.up();
